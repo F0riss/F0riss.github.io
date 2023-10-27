@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CTF 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #FFA07A, #87CEEB);
+            background-size: 400% 400%;
+            animation: GradientBackground 10s infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @keyframes GradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .form {
+            text-align: center;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        .form label, .form input {
+            display: block;
+            margin: 10px;
+        }
+
+        .form input[type="text"], .form input[type="password"] {
+            width: 100%;
+            padding: 1px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .flag-container {
+            display: none;
+        }
+
+        @keyframes showFlag {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .flag {
+            text-align: center;
+            font-size: 24px;
+            animation: showFlag 3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form" id="login-form">
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username" required>
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required>
+            <input type="submit" value="Login">
+        </form>
+
+        <div class="flag-container" id="flag-container">
+            <div class="flag" id="flag-message">
+                Flag{Default_Credentials}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("login-form");
+        const flagContainer = document.getElementById("flag-container");
+        const flagMessage = document.getElementById("flag-message");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("login-username").value;
+            const password = document.getElementById("login-password").value;
+
+            if (username === "admin" && password === "admin") {
+                flagContainer.style.display = "block";
+                loginForm.style.display = "none";
+            } else {
+                alert("Invalid credentials")
+            }
+            
+        });
+    </script>
+</body>
+</html>
