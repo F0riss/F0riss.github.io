@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CTF 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #FFA07A, #87CEEB);
+            background-size: 400% 400%;
+            animation: GradientBackground 10s infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @keyframes GradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .form {
+            display: none;
+            text-align: center;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        .form label, .form input {
+            display: block;
+            margin: 10px;
+        }
+
+        .form input[type="text"], .form input[type="password"] {
+            width: 100%;
+            padding: 1px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <button class="button" id="login-button">Login</button>
+            <button class="button" id="register-button">Register</button>
+        </div>
+        
+        <form class="form" id="login-form">
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username" required>
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required>
+            <input type="submit" value="Login">
+        </form>
+
+        <form class="form" id="register-form">
+            <label for="register-username">Username</label>
+            <input type="text" id="register-username" required>
+            <label for "register-password">Password</label>
+            <input type="password" id="register-password" required>
+            <input type="submit" value="Register">
+            <!-- Flag{always_read_the_code} -->
+
+        </form>
+    </div>
+
+    <script>
+        const loginButton = document.getElementById("login-button");
+        const registerButton = document.getElementById("register-button");
+        const loginForm = document.getElementById("login-form");
+        const registerForm = document.getElementById("register-form");
+
+        loginButton.addEventListener("click", function() {
+            loginForm.classList.add("active");
+            registerForm.classList.remove("active");
+        });
+
+        registerButton.addEventListener("click", function() {
+            registerForm.classList.add("active");
+            loginForm.classList.remove("active");
+        });
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("login-username").value;
+            const password = document.getElementById("login-password").value;
+            // Add login functionality here
+            alert(`Login: Username - ${username}, Password - ${password}`);
+        });
+
+        registerForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("register-username").value;
+            const password = document.getElementById("register-password").value;
+            // Add registration functionality here
+            alert(`Register: Username - ${username}, Password - ${password}`);
+        });
+    </script>
+</body>
+</html>
