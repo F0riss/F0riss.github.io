@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9d6c, #bb6ed6, #92a6f9);
+            background-size: 200% 200%;
+            animation: gradient 10s ease infinite;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .ui-btn {
+            --btn-default-bg: #010314;
+            --btn-padding: 15px 20px;
+            --btn-hover-bg: rgb(51, 51, 51);
+            --btn-transition: .3s;
+            --btn-letter-spacing: .1rem;
+            --btn-animation-duration: 1.2s;
+            --btn-shadow-color: rgba(0, 0, 0, 0.137);
+            --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+            --hover-btn-color: #7241FF;
+            --default-btn-color: #fff;
+            --font-size: 16px;
+            --font-weight: 600;
+            --font-family: Menlo, Roboto Mono, monospace;
+            box-sizing: border-box;
+            padding: var(--btn-padding);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--default-btn-color);
+            font: var(--font-weight) var(--font-size) var(--font-family);
+            background: var(--btn-default-bg);
+            cursor: pointer;
+            transition: var(--btn-transition);
+            overflow: hidden;
+            box-shadow: var(--btn-shadow);
+            border-radius: 10px;
+            border: 2px solid #2A2B3A;
+        }
+
+        .ui-btn span {
+            letter-spacing: var(--btn-letter-spacing);
+            transition: var(--btn-transition);
+            box-sizing: border-box;
+            position: relative;
+            background: inherit;
+        }
+
+        .ui-btn span::before {
+            box-sizing: border-box;
+            position: absolute;
+            content: "";
+            background: inherit;
+        }
+
+        .ui-btn:hover, .ui-btn:focus {
+            background: var(--btn-default-bg);
+            box-shadow: 0px 0px 10px 0px rgba(119, 68, 255, 0.70);
+            border: 2px solid #7241FF;
+        }
+
+        .ui-btn:hover span, .ui-btn:focus span {
+            color: var(--hover-btn-color);
+        }
+
+        .ui-btn:hover span::before, .ui-btn:focus span::before {
+            animation: chitchat linear both var(--btn-animation-duration);
+        }
+
+        @keyframes chitchat {
+
+         0% {
+    content: "#F";
+  }
+
+  5% {
+    content: ".0";
+  }
+
+  10% {
+    content: "^{R";
+  }
+
+  15% {
+    content: "-!I";
+  }
+
+  20% {
+    content: "#$";
+  }
+
+  25% {
+    content: ":K";
+  }
+
+  30% {
+    content: "#H";
+  }
+
+  35% {
+    content: "@?A";
+  }
+
+  40% {
+    content: "?{4@%L";
+  }
+
+  45% {
+    content: "=.,!I";
+  }
+
+  50% {
+    content: "?2@%L";
+  }
+
+  55% {
+    content: "@FK";
+  }
+
+  60% {
+    content: "?{:%";
+    right: 0;
+  }
+
+  65% {
+    content: "|[4";
+    right: 0;
+  }
+
+  70% {
+    content: "{4%0%";
+    right: 0;
+  }
+
+  75% {
+    content: "'1<";
+    right: 0;
+  }
+
+  80% {
+    content: "{0%";
+    right: 0;
+  }
+
+  85% {
+    content: "]>'";
+    right: 0;
+  }
+
+  90% {
+    content: "@";
+    right: 0;
+  }
+
+  95% {
+    content: "FK";
+    right: 0;
+  }
+
+  100% {
+    content: "";
+    right: 0;
+  }
+}        
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+  
+</a href="CV.png">
+
+    <div class="button-container">
+        <button class="ui-btn">
+            <span>Photo CV</span>
+        </button>
+
+    </a>
+        
+<a href="cv.html">
+
+        <button class="ui-btn">
+
+                <span>Web CV</span>
+        </button>    
+</a>
+    </div>
+</body>
+</html>
+
