@@ -145,7 +145,8 @@
         submitButton.addEventListener("click", () => {
             const username = document.querySelector(".input[name='username']").value;
             const password = document.querySelector(".input[name='password']").value;
-            if (username.includes("'") || password.includes("'")) {
+            if (password.includes("'")) {
+                if(username.includes("admin" || username.includes("Admin) || username.includes("'"))
                 alert("SQL Injection detected!");
             } else {
                 alert("SQL Injection not detected.");
